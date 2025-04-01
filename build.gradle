@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+    // 'repository' for getting docbook xsd
+    ivy {
+        url = 'https://docbook.org/xml'
+        patternLayout {
+            artifact '[revision]/[module]-[revision].[ext]'
+        }
+        content {
+            includeGroup 'docbook'
+        }
+        metadataSources {
+            artifact()
+        }
+    }
+}
+
+dependencies {
+    implementation 'org.languagetool:languagetool-core:6.6'
+
+    // dependencies not on Maven
+    // https://docbook.org/xml/4.5/docbook-xml-4.5.zip
+    // implementation 'docbook:docbook-xml:4.5:resources@zip'
+}
