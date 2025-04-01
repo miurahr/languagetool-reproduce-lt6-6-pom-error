@@ -2,6 +2,13 @@
 
 This project is reproducible to the error.
 
+This works well for LanguageTool 6.5, and it raises an error when increment LT version. 
+
+it is because LT 6.5 published `languagetools-parent` on Maven central, but LT 6.6 don't.
+
+See https://repo1.maven.org/maven2/org/languagetool/languagetool-parent/
+
+
 ## Command to reproduce
 ```shell
  ./gradlew dependencies
